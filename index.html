@@ -1,147 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Codeify Modern Development-CMD</title>
-    <link href="./style.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="body-index">
-    <section class="hero">
-      <img
-        src="../assets/1000889522-removebg-preview.png"
-        alt="Codeify Logo"
-        class="logo-index"
-      />
-      <nav class="navbar">
-        <a href="./index.html">HOME</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codeify Modern Development — CMD</title>
+  <style>
+    /* ===== Reset & base ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family: "Segoe UI", Tahoma, Arial, sans-serif;background:linear-gradient(180deg,#f6fbff 0%, #f0f6ff 100%);color:#0b2540}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    :root{
+      --blue-900:#012a4a;
+      --blue-700:#013a63;
+      --blue-500:#0b6fa8;
+      --blue-400:#2a9df4;
+      --blue-200:#cfeeff;
+      --accent:#00a3ff;
+      --card-bg:rgba(255,255,255,0.9);
+      --muted:#5b6b7a;
+      --glass:rgba(255,255,255,0.6);
+    }
 
-        <ul>
-          <li class="dropdown">
-            <a   href="#services">SERVICES</a>
-            <div class="dropdown-menu">
-              <a href="./courses.html">Courses</a>
-              <a href="./digitalsolutions.html">Digital Solutions</a>
-              <a href="./projects.html">Projects</a>
-            </div>
-          </li>
-        </ul>
-        <a href="./about.html">ABOUT US</a>
-        <a href="./contact.html">CONTACT US</a>
-        <span class="nav-right">
-          <a href="./login.html">LOGIN</a>
-          <a href="signup.html" id="signup">SIGN UP</a>
-        </span>
-      </nav>
-      <h1 class="hero-text">Code Your Future</h1>
-      <p id="hero-par">Empower Yourself With CMD</p>
-      <img
-        src="../assets/ChatGPT Image Sep 26, 2025, 01_02_15 AM.png"
-        alt="Programming"
-        class="hero-image"
-      />
-    </section>
-    <section class="services" id="services">
-      <h2 class="services-heading">Our Services</h2>
-      <div class="service-cards">
-     
-          <div class="service-card">
-            <img
-              src="../assets/online-course_8190846.png"
-              alt="Courses"
-              class="service-image"
-              width="50px"
-            />
-            <h3 class="service-title">Courses</h3>
-            <p class="service-description">
-              We offer a variety of courses for all skill levels, from
-              beginner to advanced. Our courses are designed to help you learn
-              the latest programming languages and technologies.
-            </p>
-               <a href="./courses.html">  <button class="btn-index">Explore more</button> </a>
-          </div>
-  
- 
-          <div class="service-card">
-            <img
-              src="../assets/online-idea_14501899.png"
-              alt="Digital Solutions"
-              class="service-image"
-              width="50px"
-            />
-            <h3 class="service-title">Digital Solutions</h3>
-            <p class="service-description">
-              We provide custom digital solutions to help businesses and
-              individuals achieve their goals. Our team of experts can help you with your buisness
-            </p>
-                <a href="./digitalsolutions.html">     <button class="btn-index" >Explore more</button></a>
-          </div>
-       
-       
-          <div class="service-card">
-            <img
-              src="../assets/rocket_4941948.png"
-              alt="Projects"
-              class="service-image"
-              width="50px"
-            />
-            <h3 class="service-title">Projects</h3>
-            <p class="service-description">
-              We work on a variety of projects, from small websites to large
-              applications. Our team is dedicated to delivering high-quality
-              solutions that meet our clients' needs.
-            </p>
-            <a href="projects.html">   <button class="btn-index">Explore more</button> </a>
-          </div>
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--blue-700),var(--blue-500));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(10,40,80,0.12)}
+    nav ul{display:flex;gap:12px;align-items:center;list-style:none}
+    nav a{padding:10px 14px;border-radius:10px;font-weight:600}
+    nav a:hover{background:var(--blue-200)}
 
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:28px;align-items:center}
+    .hero-card{background:var(--card-bg);padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(11,38,73,0.06)}
+    .hero h1{font-size:28px;color:var(--blue-900);margin-bottom:8px}
+    .hero p.lead{color:var(--muted);line-height:1.6}
+    .cta-row{display:flex;gap:12px;margin-top:18px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:700}
+    .btn-primary{background:var(--blue-700);color:#fff}
+    .btn-ghost{border:1px solid var(--blue-200);background:transparent;color:var(--blue-700)}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(8,30,60,0.05)}
+    .card h3{margin-bottom:8px;color:var(--blue-700)}
+    .price{font-size:22px;font-weight:800;color:var(--blue-900);margin-top:10px}
+    .features{margin-top:10px;color:var(--muted);line-height:1.5}
+
+    .digital{margin-top:36px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+    .digital .card p{color:var(--muted)}
+    .services{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+    .service-item{display:flex;align-items:flex-start;gap:12px}
+    .icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue-500),var(--blue-400));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+
+    .contact{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.4));padding:18px;border-radius:12px}
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6f0fb;background:white}
+    .contact-info{display:flex;flex-direction:column;gap:8px}
+    .socials{display:flex;gap:10px;flex-wrap:wrap}
+    .socials a{padding:8px 10px;border-radius:8px;background:var(--blue-200);font-weight:700}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);padding:20px 0}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .digital{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid-3{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:stretch}
+      nav ul{justify-content:flex-start}
+    }
+
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--blue-200);font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <div class="logo">CMD</div>
+        <div>
+          <div style="font-weight:800;color:var(--blue-900)">Codeify Modern Development</div>
+          <div style="font-size:12px;color:var(--muted)">Programming • Courses • Smart Solutions</div>
+        </div>
       </div>
-    </section>
-<footer class="footer"">
-  <div class="footer-container">
-    <div class="footer-about">
-      <h3>Codeify Modern Development</h3>
-      <p>Building modern solutions for web, digital, and technology projects.</p>
-    </div>
 
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="./index.html">HOME</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="./about.html">ABOUT US</a></li>
-        <li><a href="./contact.html">CONTACT US</a></li>
-      </ul>
-    </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#digital">Digital Solutions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>Email: cmd.codify@gmail.com</p>
-      <p>Phone: +20 106 546 6094</p>
-    </div>
-    <div class="footer-media">
-<h4>Get in touch</h4>
-<a href="https://www.facebook.com/people/Codeify-Modern-Development/61565943594066/#" target="_blank"> <img src="../assets/social_13480297.png"></a>
- <a href="https://www.instagram.com/cmd.egy/" target="_blank"><img src="../assets/social_15707749.png"></a>
-<a href="https://eg.linkedin.com/in/codeify-modern-development-cmd-446159329?trk=public_post_follow-view-profile" target="_blank"> <img src="../assets/social_14072078.png"></a>
-    </div>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-card">
+          <h1>Smart & Modern Development</h1>
+          <p class="lead">CMD is specialized in Embedded Systems development, Humanoid Robots, and practical programming courses. We provide short professional courses and real projects to help you get into the market fast.</p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#courses">See Courses</a>
+            <a class="btn btn-ghost" href="#contact">Book a Consultation</a>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted)">
+            <div>📞 01050568333</div>
+            <div>✉️ cmd.codify@gmail.com</div>
+          </div>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:14px">
+          <div class="card">
+            <h3>Quick Intro</h3>
+            <p class="muted">We offer hands-on training with real projects, job support, and content updated to industry requirements. Ideal for students, graduates, and professionals.</p>
+          </div>
+
+          <div class="card">
+            <h3>Why Choose Us</h3>
+            <ul style="margin-top:8px;color:var(--muted);line-height:1.6">
+              <li>Practical lectures with real examples</li>
+              <li>Hands-on labs and hardware sessions</li>
+              <li>Certified certificates & career support</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section id="courses">
+        <h2 style="margin-top:26px;color:var(--blue-700)">Courses & Pricing</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Embedded Systems</h3>
+            <div class="price">6,000 EGP</div>
+            <div class="features">Comprehensive course covering microcontrollers, serial communications, real-time control, and embedded design.</div>
+            <div style="margin-top:12px"><a class="pill" href="#contact">Register Now</a></div>
+          </div>
+
+          <div class="card">
+            <h3>Humanoid Robot Development</h3>
+            <div class="price">Around the same range</div>
+            <div class="features">Learn to build and program humanoid robots, motion control, conversational AI, and sensory integration.</div>
+            <div style="margin-top:12px"><a class="pill" href="#contact">Request Details</a></div>
+          </div>
+
+          <div class="card">
+            <h3>Programming & Software</h3>
+            <div class="price">Multiple Levels</div>
+            <div class="features">Courses in C, C++, Python, Embedded C, and IoT applications.</div>
+            <div style="margin-top:12px"><a class="pill" href="#contact">Ask About Batches</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="digital" class="digital">
+        <div class="card">
+          <h2>Digital Solutions</h2>
+          <p>We provide complete digital solutions for companies and educational products including UI/UX design, IoT cloud control systems, robot integration with web dashboards, and tech consultations.</p>
+
+          <div class="services">
+            <div class="service-item">
+              <div class="icon">UI</div>
+              <div>
+                <strong>UI/UX Design</strong>
+                <p class="muted">Professional responsive designs focusing on user experience and product readiness.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="icon">IoT</div>
+              <div>
+                <strong>IoT & Cloud Solutions</strong>
+                <p class="muted">Connect devices to the cloud, dashboards & analytics, and smart alerts for operations and maintenance.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="icon">AI</div>
+              <div>
+                <strong>AI Integration</strong>
+                <p class="muted">Custom machine learning models to enhance robot and smart system performance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="contact card" style="min-height:160px;">
+          <h3>Request a Digital Solution Quote</h3>
+          <div class="contact-info">
+            <div class="muted">Share your project idea and we will contact you with execution details.</div>
+            <div>📞 01050568333</div>
+            <div>✉️ cmd.codify@gmail.com</div>
+            <div class="socials">
+              <a href="https://www.facebook.com/people/Codeify-Modern-Development/61565943594066/" target="_blank">Facebook</a>
+              <a href="https://www.instagram.com/cmd.egy/" target="_blank">Instagram</a>
+              <a href="https://eg.linkedin.com/in/codeify-modern-development-cmd-446159329?trk=public_post_follow-view-profile" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h2 style="color:var(--blue-700)">Contact Us</h2>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+          <div class="card">
+            <form action="#" onsubmit="return false;">
+              <label>Name</label>
+              <input type="text" placeholder="Your name" />
+              <label>Email</label>
+              <input type="email" placeholder="example@mail.com" />
+              <label>Message</label>
+              <textarea rows="5" placeholder="Tell us about your project or inquiry"></textarea>
+              <div style="margin-top:8px;display:flex;gap:8px">
+                <button class="btn btn-primary">Send</button>
+                <button class="btn btn-ghost">Call Me</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h4>Contact Info</h4>
+            <p class="muted" style="margin-top:8px">01050568333<br>cmd.codify@gmail.com</p>
+            <div style="margin-top:12px"><a class="pill" href="#">Request Call</a></div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© 2025 Codeify Modern Development — CMD. All rights reserved.</div>
+    </footer>
+
   </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 Codeify Modern Development. All rights reserved.</p>
-  </div>
-</footer>
-
-  </body>
+</body>
 </html>
